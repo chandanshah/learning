@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+-->
+<html>
+    <head>
+        <title>TODO supply a title</title>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+    #navcontainer ul
+    #navcontainer ul li { display: inline; }
+
+    p.de{
+                font-size: 150%;
+                 opacity: 0.9;
+                  padding: 0.2em;
+                   margin:-5px 0;
+                    
+            }
+            ul.li {
+    list-style-type: none;
+       padding: 0.4em;
+        float: left;
+            opacity: 0.5;
+            
+                li { margin:-5px 0;
+                 opacity: 0.5;
+             
+                }
+            
+            
+        </style>
+            
+    
+    </head>
+    <body>
+        <ul class="li">
+  <li><p id="hr" class="de"></p></li>
+  <li>Hour</li>
+  
+</ul>
+                  
+        <ul class="li">
+  <li>     <p id="min" class="de"></p>
+  </li>
+  <li>Minute</li>
+  
+</ul>
+             
+        <ul class="li">
+  <li> <p id="ss" class="de"></p>
+ </li>
+  <li>Second</li>
+  
+</ul>
+       
+        
+   
+        
+<script>
+// Set the date we're counting down to
+var countDownDate1 = new Date();
+var countDownDate = new Date();
+    countDownDate.setHours(22);
+    countDownDate.setMinutes(00);
+
+
+   var tommdate = new Date();
+   tommdate.setDate(tommdate.getDate() + 1);
+   tommdate.setHours(22);
+   tommdate.setMinutes(00);
+
+//var countDownDate = Date.UTC(yy,mm,(dd),22,00,0,0);
+// Update the count down every 1 second
+var x = setInterval(function() {
+
+    // Get todays date and time
+    var now = new Date().getTime();
+    
+    // Find the distance between now an the count down date
+    var distance = countDownDate - now;
+    var future = tommdate - now;    
+    if (distance > 0) {
+    // Time calculations for days, hours, minutes and seconds
+    var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+    
+    // Output the result in an element with id="demo"
+    document.getElementById("hr").innerHTML =  hours + " "
+    ;
+    
+    document.getElementById("min").innerHTML =  minutes + " " ;
+        
+    document.getElementById("ss").innerHTML =  
+    seconds + " ";
+        
+        
+        }
+  
+        
+        
+        else
+    {
+    var days = Math.floor(future / (1000 * 60 * 60 * 24));
+    var hours = Math.floor((future % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    var minutes = Math.floor((future % (1000 * 60 * 60)) / (1000 * 60));
+    var seconds = Math.floor((future % (1000 * 60)) / 1000);
+    // Output the result in an element with id="demo"
+    document.getElementById("demo").innerHTML =  hours + " "
+    + minutes + " " + seconds + "";
+    }
+    
+}, 1000);
+</script>
+    </body>
+</html>
